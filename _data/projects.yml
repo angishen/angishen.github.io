@@ -1,0 +1,43 @@
+
+- name: Founderati
+  id: founderati
+  date: Spring 2015
+  image: Thumbnail3.png
+  technologies:
+    - Python
+    - MongoDB
+    - Javascript
+    - Elastic Search
+
+- name: Real Time Terrain Generation
+  id: fractal_world
+  date: Spring 2015
+  image: WaterWithRipples.png
+  technologies:
+    - C++
+    - OpenGL
+    - GLSL
+
+- name: Connectomics
+  id: connectomics
+  date: Spring 2014
+  image: connectivity.jpg
+  technologies:
+    - Python
+    - C
+    - Matlab
+
+- name: Genetic Algorithm Image Reconstruction
+  id: ga
+  date: Fall 2012
+  image: Image_Reconstructed.jpg
+  technologies:
+    - Javascript
+    - HTML
+
+- name: Eigenface Facial Recognition
+  id: eigenface
+  date: Fall 2014
+  image: first_principal_eigenface_darkened.jpg
+  technologies:
+    - Matlab

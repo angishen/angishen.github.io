@@ -1,0 +1,9 @@
+<script type="text/javascript">
+	// Tumblr's redirects add #_=_ for security, but it's ugly.
+	(function(){
+		var hash = window.location.href.indexOf("#_=_");
+		if (hash>=0 && window.history.replaceState) {
+			window.history.replaceState(null, null, window.location.href.substring(0, hash));
+		}
+	})();
+</script>

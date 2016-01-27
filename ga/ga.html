@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<head>
+   <title>Image Evolution | Austin Stone</title>
+   <script type="text/javascript" src="evolution.js"></script>
+   <script type="text/javascript" src="evo_shell.js"></script> 
+   <style>
+      .image { float:left; margin:.5em 0.5em 0em .8em; font-size:1.5em }
+      .small_image { float:left; margin:.5em 0.5em 0em .8em; font-size:1em }
+      .image_box { width:503px; height:250px; border:none; padding:5px; margin-left: auto ; margin-right: auto ;}
+      .small_img_box{width:100px; height:100px; border:none; padding:5px; margin-left: auto ; margin-right: auto ;}
+      .img{position:absolute;z-index:-1;}
+   </style>
+</head>
+<body bgcolor="#E6E6FA">
+   <div style="height 500px; width: 700px">
+      <div style="height:360px;width:400px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto; float:left; background-color:white">
+         Try pressing the "evolve" button! This program evolves an approximation of the input image using a genetic algorithm. The approximation uses only a user specified number polygons each with a user specified number of sides. The parameters are currently set to evolve an approximation with 150 seven sided shapes (heptagons), but please try out different constraints! The evolution works by maintaining a population of "genome" strings (analogous to DNA) each of which encodes an image made of polygons. The fitness of a genome is calculated based on how well the genome approximates the input image. Currently the parameters are set so that only the top 20 percent of the population (in terms of fitness) is allowed to breed and produce the next generation (specified in the "Breeding Threshhold" field). Parents are also set to die off after they breed the next generation (via kill parents box). Uniform cross splits genes evenly between between the parents during sexual reproduction to produce a child. If uniform cross is not checked, a single crossover point is selected at random (similar to what occurs during chromosomal crossing over in biological organisms). The chance of mutation field specifies how likely a random gene is to undergo a mutation during reproduction (must be a value between 0 and 1), and the mutation size describes the average severity of the mutation on a scale of 0 to 1. <!--To an extent, the higher the mutation chance and mutation size, the faster the population will evolve an approximation. However, high mutation rates and large mutation sizes also decrease the quality of approximation upon which the population fitness stabilizes, i.e. the maximum quality approximation that the population can evolve. -->
+      </div>
+   </div>
+   <div class="image_box">
+      <div class = "image">
+         Input Image<br>
+         <img src="PietMondrian.jpg" style="display:none;" id="input_img" />
+         <canvas style="border-style:solid;" id="input_canvas"></canvas>
+      </div>
+      <div class = "image">
+         Current Best Genome <br> 
+         <div id="container">
+            <img class='img' src="whitenig.png" alt="" />
+            <canvas style="border-style:solid;" id="output_canvas"></canvas>
+         </div>
+      </div>
+   </div>
+   <div class = "small_img_box">
+      <div class = "small_image">
+         Competing Population..</br>
+         <img class='img' src="boxwine.png" alt="" />
+         <canvas style="border-style:solid;" id = "fitness_calc_canvas"> </canvas>
+         </br>
+      </div>
+   </div>
+   Input Image: 
+   <select id="img_selection" onchange="swap_input_img()">
+      <option value="PietMondrian.jpg">Piet Mondrian</option>
+      <option value="skyscrapers3.jpg">Skyscrapers</option>
+      <option value="beach200by200.jpg">Beach</option>
+      <option value="sunset.jpg">Sunset</option>
+      <option value="anime_face.jpg">Anime Face</option>
+   </select>
+   <br/>
+   Number of points: <input type="text" size=4 id="points_per_shape" value="7"/> <br/>
+   Number of shapes: <input type="text" size=4 id="num_shapes" value="150"/><br/>
+   Number of genomes: <input type="text" size=4 id="pop_size" value="50"/><br/>
+   Mutation size: <input type="text" size=4 id="mutation_size" value="0.1"/><br/>
+   Chance of mutation: <input type="text" size=4 id="mutation_chance" value="0.02"/><br/>
+   Breeding Threshhold: <input type="text" size=4 id="percent_to_breed" value="0.2"/><br/>
+   Kill parents: <input type="checkbox" id="kill_parents" checked /><br/>
+   Uniform Crossover: <input type="checkbox" id="uni_cross" checked/><br/>
+   <input type="button" value="Evolve" onclick="start();" id="start_button" disabled=true/>
+   <input type="button" value="Stop" onclick="stop();"/><br/>
+   Run Stats:<br/>
+   <textarea style="width:350px;height:180px;" id="output_stats"></textarea>
+   <br/>
+   <div style = "
+      width: 960px;
+      height: 60px;
+      padding: 30px 10px 0 10px;
+      text-align: center;">    
+      <a href="/" target="_parent"> 
+      Home 
+      </a> | 
+      <a href="/home.html" target="_parent"> 
+      Projects Page 
+      </a>
+   </div>
+   <!-- end of footer -->
+</body>
+</html>

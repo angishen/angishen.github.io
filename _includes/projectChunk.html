@@ -1,0 +1,17 @@
+<div class="chunk">
+	<a href="{{ project.id }}">
+		<img src="{{ project.id }}/{{ project.image }}" />
+		<h2 class="title">{{ project.name }}</h2>
+	</a>
+	<div class="description">
+		<h3>{{ project.date }}</h3>
+		{% if project.subdate %}
+			<h4>{{ project.subdate }}</h4>
+		{% endif %}
+		<ul>
+			{% for tech in project.technologies %}
+			<li>{{ tech }}</li>
+			{% endfor %}
+		</ul>
+	</div>
+</div>

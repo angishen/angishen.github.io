@@ -1,0 +1,7 @@
+name: Austin Stone
+author: Austin Stone
+author_email: austinstone@utexas.edu
+encoding: utf-8
+markdown: kramdown
+redirect_from: "/"
+redirect_to: "//www.github.com"

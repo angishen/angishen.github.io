@@ -1,0 +1,4 @@
+jquery: http://code.jquery.com/jquery-1.11.0.min.js
+jquery_slides: jquery.slides.min.js
+project_slideshow: project_slideshow.js
+video: video.js

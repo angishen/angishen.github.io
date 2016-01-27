@@ -1,0 +1,45 @@
+<div id="contact">
+	<img src="http://i909.photobucket.com/albums/ac297/austin_stone1/me_sexy_square_zpstuhp1gzj.png" title="Portrait" />
+	<h2>Contact Me</h2>
+	<div class="message">
+		I've accepted an internship offer for summer 2015.<br/>
+		I'm interested in full-time opportunities starting in early 2016.
+	</div>
+	<ul>
+		<li>
+			<!-- other characters in here to discourage spam -->
+			<i class="fa fa-envelope"></i>
+			<span id="email">&#97;&#117;&#115;&#116;&#105;&#110;&#115;&#116;&#111;&#110;&#101;<b>+nospam</b>&#64;&#117;&#116;&#101;&#120;&#97;&#115;&#46;&#101;&#100;&#117;</span>
+		</li>
+		<li>
+			<!-- other characters in here to discourage spam -->
+			<i class="fa fa-phone"></i>
+			<span id="phone">&#54;<b>7</b>&#56;<b>9</b>&#50;&#45;<b>9</b>&#53;<b>0</b>&#53;<b>4</b>&#52;&#45;<b>6</b>&#48;<b>3</b>&#55;&#54;&#57;<b>2</b><b>1</b></span>
+		</li>
+		<li>
+			<i class="fa fa-linkedin"></i>
+			<a href="https://www.linkedin.com/pub/austin-stone/a3/32b/440">Connect on LinkedIn</a>
+		</li>
+	</ul>
+	<a class="fa fa-times-circle" id="contact_close" href="/"></a>
+</div>
+<script type="text/javascript">
+// replace obfuscated phone and email with links
+(function() {
+	var email = document.getElementById("email");
+	var email_text = email.innerText.trim();
+	var email_a = document.createElement("a");
+	email_a.setAttribute("href", "mailto:"+email_text);
+	email_a.innerText = email_text;
+	email.parentNode.replaceChild(email_a, email);
+
+	var phone = document.getElementById("phone");
+	var phone_text = phone.innerText.trim();
+	var phone_num = phone_text.replace(".", "").replace(".", "");
+	var phone_a = document.createElement("a");
+	phone_a.setAttribute("href", "tel:"+phone_num);
+	phone_a.className = "tel_link";
+	phone_a.innerText = phone_text;
+	phone.parentNode.replaceChild(phone_a, phone);
+})();
+</script>

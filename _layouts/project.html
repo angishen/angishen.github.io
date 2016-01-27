@@ -1,0 +1,32 @@
+---
+layout: hasHeader
+headerTitle: Projects
+headerTitleLink: /
+javascript:
+ - jquery
+ - jquery_slides
+ - project_slideshow
+ - video
+---
+<div class="project_head">
+	<h1>{{ page.title }}</h1>
+	{% if page.links %}
+		<div class="source_links">
+		{% for link in page.links %}
+			<a class="source_link" href="{{ link.url }}">{{ link.title }} <i class="fa fa-chevron-circle-right"></i></a>
+		{% endfor %}
+		</div>
+	{% endif %}
+</div>
+
+<div class="slideshow">
+{% for slide in page.slideshow %}
+	{% if slide.image %}<img src="{{ slide.image }}" />{% endif %}
+	{% if slide.youtube %}<object width="780" height="400"><param name="movie" value="http://www.youtube.com/v/{{ slide.youtube }}?hl=en_US&amp;version=3"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/{{ slide.youtube }}?hl=en_US&amp;version=3" type="application/x-shockwave-flash" width="780" height="400" allowscriptaccess="always" allowfullscreen="true"></embed></object>{% endif %}
+	{% if slide.html5 %}<div class="video_container"><video width="780" height="400" {% if slide.thumbnail %}poster="{{ slide.thumbnail }}" {% endif %}{% if slide.autoplay %} class="autoplay" autoplay="true" loop{% endif %}><source src="{{ slide.html5 }}"{% if slide.format%} type="{{ slide.format }}"{% endif %}></video></div>{% endif %}
+{% endfor %}
+</div>
+
+<div class="description">
+	{{ content }}
+</div>

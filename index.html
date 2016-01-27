@@ -1,0 +1,35 @@
+---
+layout: default
+viewport: 780
+tablet_viewport: 600
+bodyclass: homepage page1
+---
+{% include homepage.html %}
+{% include contactCard.html %}
+<script type="text/javascript">
+	(function() {
+
+		var toggle = function(n, e) {
+			document.body.className = "homepage page"+n;
+			e.preventDefault();
+			return false;
+		};
+
+		var buttons = {
+			"button-contact" : 2,
+			"contact_close" : 1
+		};
+
+		for (var id in buttons) {
+			var n = buttons[id];
+			var fn = toggle.bind(null, n);
+			var el = document.getElementById(id);
+			if (el.addEventListener) {
+				el.addEventListener("click", fn, false);
+			} else if (el.attachEvent) {
+				el.attachEvent("onclick", fn);
+			}
+		}
+
+	})();
+</script>

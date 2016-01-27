@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<!--
+	Designed and developed by Austin Stone.
+	Pages generated with Jekyll on {{ site.time | date_to_string }}.
+	See template source here: https:github.com
+-->
+<head>
+	<title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.name }}</title>
+	<meta name="robots" content="noindex, nofollow" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	{% if page.viewport %}
+		<meta name="viewport" content="width={{ page.viewport }}, user-scalable=no" />
+		<script type="text/javascript">
+			window.tabletViewportWidth = {% if page.tablet_viewport %}{{ page.tablet_viewport }}{% else %}{{ page.viewport }}{% endif %};
+		</script>
+		<script src="/static/viewport.js" type="text/javascript"></script>
+	{% endif %}
+	<link rel="icon" href="/static/favicon.ico" />
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
+	<link href="http://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet" type="text/css" />
+	<link href="/static/styles.css" rel="stylesheet" type="text/css" />
+	<link href="/static/mobile.css" rel="stylesheet" media="screen and (max-device-width: 480px)" type="text/css" />
+	{% for key in page.javascript %}
+		{% assign path = site.data.javascript[key] %}
+		{% if path contains 'http' %}
+			<script src="{{ path }}" type="text/javascript"></script>
+		{% else %}
+			<script src="/static/{{ path }}" type="text/javascript"></script>
+		{% endif %}
+	{% endfor %}
+</head>
+<body{% if page.bodyclass %} class="{{ page.bodyclass }}"{% endif %}>
+	<div id="wrapper">
+		{{ content }}
+	</div>
+	{% include tracking.html %}
+	{% include nohash.html %}
+</body>
+</html>

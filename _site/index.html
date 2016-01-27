@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<!--
+	Designed and developed by Austin Stone.
+	Pages generated with Jekyll on 30 Aug 2015.
+	See template source here: https:github.com
+-->
+<head>
+	<title>Austin Stone</title>
+	<meta name="robots" content="noindex, nofollow" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	
+		<meta name="viewport" content="width=780, user-scalable=no" />
+		<script type="text/javascript">
+			window.tabletViewportWidth = 600;
+		</script>
+		<script src="/static/viewport.js" type="text/javascript"></script>
+	
+	<link rel="icon" href="/static/favicon.ico" />
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
+	<link href="http://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet" type="text/css" />
+	<link href="/static/styles.css" rel="stylesheet" type="text/css" />
+	<link href="/static/mobile.css" rel="stylesheet" media="screen and (max-device-width: 480px)" type="text/css" />
+	
+</head>
+<body class="homepage page1">
+	<div id="wrapper">
+		<div id="main">
+	<h1>Hi, I'm Austin Stone.</h1>
+	<div class="message">
+		I aspire to write software that<br/>solves problems and delights users.
+	</div>
+	<div id="buttons">
+	<a id="button-projects" class="button-c fa fa-code" href="/home.html">
+		<label>Projects</label>
+	</a>
+	<a id="button-resume" class="button-a fa fa-file" href="/resume">
+		<label>R&egrave;sum&egrave;</label>
+	</a>
+	<a id="button-contact" class="button-b fa fa-envelope" href="/contact.html">
+		<label>Contact</label>
+	</a>
+	<a id="button-github" class="button-e fa fa-github-alt" href="https://github.com/AustinStoneProjects">
+		<label>GitHub</label>
+	</a>
+</div>
+
+</div>
+<div id="contact">
+	<img src="http://i909.photobucket.com/albums/ac297/austin_stone1/me_sexy_square_zpstuhp1gzj.png" title="Portrait" />
+	<h2>Contact Me</h2>
+	<div class="message">
+		I've accepted an internship offer for summer 2015.<br/>
+		I'm interested in full-time opportunities starting in early 2016.
+	</div>
+	<ul>
+		<li>
+			<!-- other characters in here to discourage spam -->
+			<i class="fa fa-envelope"></i>
+			<span id="email">&#97;&#117;&#115;&#116;&#105;&#110;&#115;&#116;&#111;&#110;&#101;<b>+nospam</b>&#64;&#117;&#116;&#101;&#120;&#97;&#115;&#46;&#101;&#100;&#117;</span>
+		</li>
+		<li>
+			<!-- other characters in here to discourage spam -->
+			<i class="fa fa-phone"></i>
+			<span id="phone">&#54;<b>7</b>&#56;<b>9</b>&#50;&#45;<b>9</b>&#53;<b>0</b>&#53;<b>4</b>&#52;&#45;<b>6</b>&#48;<b>3</b>&#55;&#54;&#57;<b>2</b><b>1</b></span>
+		</li>
+		<li>
+			<i class="fa fa-linkedin"></i>
+			<a href="https://www.linkedin.com/pub/austin-stone/a3/32b/440">Connect on LinkedIn</a>
+		</li>
+	</ul>
+	<a class="fa fa-times-circle" id="contact_close" href="/"></a>
+</div>
+<script type="text/javascript">
+// replace obfuscated phone and email with links
+(function() {
+	var email = document.getElementById("email");
+	var email_text = email.innerText.trim();
+	var email_a = document.createElement("a");
+	email_a.setAttribute("href", "mailto:"+email_text);
+	email_a.innerText = email_text;
+	email.parentNode.replaceChild(email_a, email);
+
+	var phone = document.getElementById("phone");
+	var phone_text = phone.innerText.trim();
+	var phone_num = phone_text.replace(".", "").replace(".", "");
+	var phone_a = document.createElement("a");
+	phone_a.setAttribute("href", "tel:"+phone_num);
+	phone_a.className = "tel_link";
+	phone_a.innerText = phone_text;
+	phone.parentNode.replaceChild(phone_a, phone);
+})();
+</script>
+
+<script type="text/javascript">
+	(function() {
+
+		var toggle = function(n, e) {
+			document.body.className = "homepage page"+n;
+			e.preventDefault();
+			return false;
+		};
+
+		var buttons = {
+			"button-contact" : 2,
+			"contact_close" : 1
+		};
+
+		for (var id in buttons) {
+			var n = buttons[id];
+			var fn = toggle.bind(null, n);
+			var el = document.getElementById(id);
+			if (el.addEventListener) {
+				el.addEventListener("click", fn, false);
+			} else if (el.attachEvent) {
+				el.attachEvent("onclick", fn);
+			}
+		}
+
+	})();
+</script>
+	</div>
+	
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=10595703; 
+var sc_invisible=0; 
+var sc_security="f9fb3657"; 
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="web analytics"
+href="http://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="http://c.statcounter.com/10595703/0/f9fb3657/0/"
+alt="web analytics"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+	<script type="text/javascript">
+	// Tumblr's redirects add #_=_ for security, but it's ugly.
+	(function(){
+		var hash = window.location.href.indexOf("#_=_");
+		if (hash>=0 && window.history.replaceState) {
+			window.history.replaceState(null, null, window.location.href.substring(0, hash));
+		}
+	})();
+</script>
+</body>
+</html>

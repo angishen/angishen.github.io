@@ -1,0 +1,13 @@
+---
+layout: hasHeader
+title: Projects
+headerTitle: Projects
+---
+{% for project in site.data.projects %}
+	{% if project.unpublished != true %}
+	{% include projectChunk.html %}
+	{% endif %}
+{% endfor %}
+<div id="github_promo">
+	...or jump straight to the source on <a href="https://github.com/AustinStoneProjects">GitHub</a>.
+</div>
