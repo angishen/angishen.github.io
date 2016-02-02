@@ -1,43 +1,15 @@
-
-- name: Founderati
-  id: founderati
-  date: Spring 2015
-  image: Thumbnail3.png
+- name: Twitter Style Ruby on Rails Dynamic Site
+  id: railsSite
+  date: Fall 2015
+  image: appCoverPhoto.png
   technologies:
-    - Python
-    - MongoDB
-    - Javascript
-    - Elastic Search
-
-- name: Real Time Terrain Generation
-  id: fractal_world
-  date: Spring 2015
-  image: WaterWithRipples.png
-  technologies:
-    - C++
-    - OpenGL
-    - GLSL
-
-- name: Connectomics
-  id: connectomics
-  date: Spring 2014
-  image: connectivity.jpg
-  technologies:
-    - Python
-    - C
-    - Matlab
-
-- name: Genetic Algorithm Image Reconstruction
-  id: ga
-  date: Fall 2012
-  image: Image_Reconstructed.jpg
-  technologies:
-    - Javascript
+    - Ruby on Rails
     - HTML
+    - CSS
 
-- name: Eigenface Facial Recognition
-  id: eigenface
-  date: Fall 2014
-  image: first_principal_eigenface_darkened.jpg
+- name: Breakout! 
+  id: brickBreaker
+  date: Spring 2015
+  image: coverBreakout.png
   technologies:
-    - Matlab
+    - C
